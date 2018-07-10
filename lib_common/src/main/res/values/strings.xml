@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">lib-comment</string>
+    <string name="channel_sound_name">有声推送</string>
+    <string name="channel_silence_name">无声推送</string>
+    <string name="label_loading">加载中...</string>
+</resources>

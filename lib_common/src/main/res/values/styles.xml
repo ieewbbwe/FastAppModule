@@ -1,0 +1,55 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="Base.AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+
+    </style>
+
+    <style name="AppTheme" parent="Base.AppTheme" />
+
+    <!--无ActionBar的AppTheme-->
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Toolbar" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <!--ToolBar-->
+    <style name="tool_bar_style" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <item name="titleTextColor">@color/white</item><!--标题颜色-->
+        <item name="android:textColorSecondary">@color/white</item><!--toolbar menu 图标的颜色-->
+        <item name="actionMenuTextColor">@color/textColor</item><!--菜单颜色-->
+        <item name="android:textSize">@dimen/text_size_18sp</item><!--菜单字体大小-->
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="overlapAnchor">false</item>  <!--设置菜单弹出不覆盖锚点-->
+    </style>
+
+    <!--全屏-->
+    <style name="FullscreenTheme" parent="AppTheme.NoActionBar">
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@null</item>
+    </style>
+
+    <!-- 自定义loading dialog -->
+    <style name="ProgressDialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowFrame">@null</item><!--边框-->
+        <item name="android:windowNoTitle">true</item><!--无标题-->
+        <item name="android:windowBackground">@android:color/transparent</item><!--背景透明-->
+        <item name="android:windowIsTranslucent">false</item><!--半透明-->
+        <item name="android:windowIsFloating">true</item><!--是否浮现在activity之上-->
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">false</item><!--模糊-->
+    </style>
+
+</resources>
