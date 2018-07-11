@@ -1,8 +1,10 @@
-package com.mobile_core.module_main;
+package com.mobile_core.lib_comment.mvvm;
 
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 
+import com.mobile_core.lib_comment.BasicView;
+import com.mobile_core.lib_comment.BasicViewModel;
 import com.mobile_core.lib_comment.manager.AppStyleManager;
 
 /**
@@ -10,7 +12,8 @@ import com.mobile_core.lib_comment.manager.AppStyleManager;
  * Describe：
  */
 
-public abstract class ParentViewModel<V extends NView> extends BaseObservable{
+public abstract class ParentViewModel<V extends BasicView> extends BaseObservable
+        implements BasicViewModel{
 
     @Bindable
     public AppStyleManager style;
@@ -27,9 +30,9 @@ public abstract class ParentViewModel<V extends NView> extends BaseObservable{
         this.style = style;
     }
 
-    protected NView view;
+    protected BasicView view;
 
-    public void onAttach(NView view){
+    public void onAttach(BasicView view){
         this.view = view;
     }
 

@@ -1,9 +1,7 @@
-package com.mobile_core.module_main.ViewModel;
+package com.mobile_core.lib_comment.mvvm;
 
 
 import android.graphics.drawable.Drawable;
-
-import com.mobile_core.module_main.ParentViewModel;
 
 /**
  * Created by picher on 2018/7/6.

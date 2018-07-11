@@ -6,9 +6,8 @@ import com.alibaba.android.arouter.launcher.ARouter;
 
 /**
  * Created by picher on 2018/7/11.
- * Describe：路由管理类，负责路由初始化，路由选择
+ * Describe：路由管理类，负责路由初始化、统一的路由选择管理
  */
-
 public class RouterManager {
 
     /* MODEL_PERSONAL */
@@ -29,5 +28,10 @@ public class RouterManager {
 
     public static void init(Application application){
         ARouter.init(application);
+        getInstance();
+    }
+
+    public void startMineActivity(){
+        ARouter.getInstance().build(RouterManager.MODEL_PERSONA_MINE).navigation();
     }
 }

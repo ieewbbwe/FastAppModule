@@ -1,4 +1,4 @@
-package com.mobile_core.module_main;
+package com.mobile_core.lib_comment.mvvm;
 
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
@@ -8,17 +8,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.mobile_core.lib_comment.BR;
 import com.mobile_core.lib_comment.BasicActivity;
-import com.mobile_core.module_main.ViewModel.ToolBarViewModel;
-import com.mobile_core.module_main.databinding.ToolBarDefaultBinding;
+import com.mobile_core.lib_comment.R;
+import com.mobile_core.lib_comment.databinding.ToolBarDefaultBinding;
 
 /**
- * Created by picher on 2018/7/5.
- * Describe：MVVM 架构的Activity 基类
+ * Created by picher on 2018/7/11.
+ * Describe：MVVM 架构 Activity 基类
  */
 
-public abstract class NActivity<VM extends ParentViewModel, B extends ViewDataBinding>
-        extends BasicActivity implements NView {
+public abstract class MActivity<VM extends ParentViewModel, B extends ViewDataBinding>
+        extends BasicActivity{
 
     protected B binding;
     protected VM viewModel;
@@ -41,8 +42,8 @@ public abstract class NActivity<VM extends ParentViewModel, B extends ViewDataBi
      *
      * @param toolBarViewModel ToolBar 控制类
      */
-    public void setupToolBar(ToolBarViewModel toolBarViewModel) {
-        ToolBarDefaultBinding barBinding = DataBindingUtil.findBinding(findViewById(R.id.toolBarLayout));
+    public void setupToolBar(ToolBarViewModel toolBarViewModel,View toolBarLayout) {
+        ToolBarDefaultBinding barBinding = DataBindingUtil.findBinding(toolBarLayout);
         if (barBinding != null) {
             setSupportActionBar(barBinding.toolBar);
             if (getSupportActionBar() != null) {
@@ -75,5 +76,4 @@ public abstract class NActivity<VM extends ParentViewModel, B extends ViewDataBi
             }
         }
     }
-
 }

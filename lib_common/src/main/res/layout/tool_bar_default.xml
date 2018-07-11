@@ -5,7 +5,7 @@
 
         <variable
             name="viewModel"
-            type="com.mobile_core.module_main.ViewModel.ToolBarViewModel" />
+            type="com.mobile_core.lib_comment.mvvm.ToolBarViewModel" />
     </data>
 
     <!--头部-->

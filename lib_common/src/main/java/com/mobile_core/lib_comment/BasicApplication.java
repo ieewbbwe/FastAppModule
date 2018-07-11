@@ -10,6 +10,8 @@ import com.mobile_core.lib_comment.manager.SharedPrefManager;
 import com.mobile_core.lib_comment.manager.UncaughtException;
 import com.mobile_core.lib_comment.manager.image.ImageLoadFactory;
 
+import retrofit2.Retrofit;
+
 /**
  * Created by picher on 2018/7/5.
  * Describe：Base Application for some init
@@ -20,11 +22,11 @@ public class BasicApplication extends Application{
     @Override
     public void onCreate() {
         super.onCreate();
+        RouterManager.init(this);
         SharedPrefManager.init(getApplicationContext());
         ImageLoadFactory.init(getApplicationContext());
         NotificationManager.getInstance().init(getApplicationContext());
         Thread.setDefaultUncaughtExceptionHandler(UncaughtException.getInstance(getApplicationContext()));
-        RouterManager.init(this);
 
         MultiDex.install(this);
     }

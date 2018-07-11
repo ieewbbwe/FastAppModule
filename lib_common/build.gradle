@@ -22,7 +22,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
+    dataBinding {
+        enabled true
+    }
 }
 
 dependencies {
@@ -48,6 +50,8 @@ dependencies {
     api deps.retrofit2_log
     /*路由框架*/
     api deps.arouter_api
+    /*数据库框架Room*/
+
 
     /*测试框架*/
     testApi deps.jnuit

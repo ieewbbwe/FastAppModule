@@ -1,14 +1,11 @@
 package com.mobile_core.module_main.main;
 
-import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 
-import com.mobile_core.module_main.NActivity;
-import com.mobile_core.module_main.ParentViewModel;
+import com.mobile_core.lib_comment.mvvm.MActivity;
+import com.mobile_core.lib_comment.mvvm.ToolBarViewModel;
 import com.mobile_core.module_main.R;
-import com.mobile_core.module_main.ViewModel.ToolBarViewModel;
 import com.mobile_core.module_main.databinding.ActivityMMainBinding;
 
 /**
@@ -16,16 +13,16 @@ import com.mobile_core.module_main.databinding.ActivityMMainBinding;
  * Describe：MVVM
  */
 
-public class MainActivity extends NActivity<MainViewModel, ActivityMMainBinding> implements MainContract.View {
+public class MainActivity extends MActivity<MainViewModel, ActivityMMainBinding>
+        implements MainContract.View {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ToolBarViewModel toolBarViewModel = new ToolBarViewModel("主页", false);
         toolBarViewModel.setCustomerViewId(R.layout.tool_bar_customer_layout);
-        setupToolBar(toolBarViewModel);
+        setupToolBar(toolBarViewModel,findViewById(R.id.toolBarLayout));
         binding.setToolBarViewModel(toolBarViewModel);
-
     }
 
     @Override

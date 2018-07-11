@@ -1,6 +1,6 @@
 package com.mobile_core.lib_comment.fragment;
 
-import com.mobile_core.lib_comment.BasicDailog;
+import com.mobile_core.lib_comment.BasicDialog;
 import com.mobile_core.lib_comment.R;
 
 /**
@@ -8,7 +8,7 @@ import com.mobile_core.lib_comment.R;
  * Describe：加载进度Dialog
  */
 
-public class LoadingDialogFragment extends BasicDailog {
+public class LoadingDialogFragment extends BasicDialog {
 
     @Override
     protected int getLayoutId() {

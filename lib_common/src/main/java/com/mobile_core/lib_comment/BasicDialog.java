@@ -13,7 +13,7 @@ import android.view.ViewGroup;
  * Describe：Dialog 基类，继承字DialogFragment
  */
 
-public abstract class BasicDailog extends DialogFragment{
+public abstract class BasicDialog extends DialogFragment{
 
     @Nullable
     @Override

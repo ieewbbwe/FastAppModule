@@ -1,8 +1,15 @@
 package com.mobile_core.module_main.main;
 
-import com.alibaba.android.arouter.launcher.ARouter;
+import android.util.Log;
+import android.view.View;
+
+import com.jakewharton.rxbinding.view.RxView;
 import com.mobile_core.lib_comment.manager.RouterManager;
-import com.mobile_core.module_main.ParentViewModel;
+import com.mobile_core.lib_comment.mvvm.ParentViewModel;
+
+import java.util.concurrent.TimeUnit;
+
+import rx.functions.Action1;
 
 /**
  * Created by picher on 2018/7/5.
@@ -12,8 +19,10 @@ import com.mobile_core.module_main.ParentViewModel;
 public class MainViewModel extends ParentViewModel<MainContract.View>
         implements MainContract.ViewModel{
 
-    public void onClickMine(){
-        ARouter.getInstance().build(RouterManager.MODEL_PERSONA_MINE).navigation();
+    public void onClickMine(View v){
+        RouterManager.getInstance().startMineActivity();
+        /*RxView.clicks(v).throttleFirst(1, TimeUnit.SECONDS).subscribe(aVoid -> {
+        });*/
     }
 
     public void onClickNews(){
