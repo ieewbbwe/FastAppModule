@@ -36,7 +36,6 @@ public abstract class NActivity<VM extends ParentViewModel, B extends ViewDataBi
 
     protected abstract int getLayoutId();
 
-
     /**
      * 设置ToolBar属性
      *

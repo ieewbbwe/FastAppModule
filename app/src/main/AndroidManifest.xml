@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="cn.picher.fastapp_module">
+    package="com.mobile_core.fastapp_module">
 
     <application
         android:name="com.mobile_core.fastapp_module.NApplication"
