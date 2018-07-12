@@ -19,5 +19,7 @@
 
         <activity android:name="com.mobile_core.module_main.main.MainActivity"
             android:screenOrientation="portrait"/>
+        <activity android:name="com.mobile_core.module_main.main.BottomFragmentActivity"
+            android:screenOrientation="portrait"/>
     </application>
 </manifest>

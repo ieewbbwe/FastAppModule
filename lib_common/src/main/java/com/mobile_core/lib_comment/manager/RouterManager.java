@@ -12,6 +12,7 @@ public class RouterManager {
 
     /* MODEL_PERSONAL */
     public static final String MODEL_PERSONA_MINE = "/person/mine";
+    public static final String MODEL_MAIN_BOTTOM_FRAGMENT = "/main/bottom";
     /* MODEL_MAIN */
     /* MODEL_NEWS */
 
@@ -33,5 +34,9 @@ public class RouterManager {
 
     public void startMineActivity(){
         ARouter.getInstance().build(RouterManager.MODEL_PERSONA_MINE).navigation();
+    }
+
+    public void startBottomFragmentActivity() {
+        ARouter.getInstance().build(RouterManager.MODEL_MAIN_BOTTOM_FRAGMENT).navigation();
     }
 }

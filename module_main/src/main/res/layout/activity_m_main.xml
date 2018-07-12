@@ -2,13 +2,14 @@
 <layout>
 
     <data>
+
         <variable
             name="viewModel"
-            type="com.mobile_core.module_main.main.MainViewModel"/>
+            type="com.mobile_core.module_main.main.MainViewModel" />
 
         <variable
             name="toolBarViewModel"
-            type="com.mobile_core.lib_comment.mvvm.ToolBarViewModel"/>
+            type="com.mobile_core.lib_comment.mvvm.ToolBarViewModel" />
     </data>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -20,7 +21,7 @@
         <include
             android:id="@+id/toolBarLayout"
             layout="@layout/tool_bar_default"
-            app:viewModel ="@{toolBarViewModel}" />
+            app:viewModel="@{toolBarViewModel}" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -28,20 +29,34 @@
             android:text="主界面" />
 
         <Button
-            android:onClick="@{(v) -> viewModel.onClickMine(v)}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="@{() -> viewModel.onAnswerClick()}"
+            android:text="答题组件" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{(v) -> viewModel.onClickMine(v)}"
             android:text="个人组件" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="新闻组件" />
+            android:onClick="@{() -> viewModel.onPPSClick()}"
+            android:text="论坛组件" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="@{() -> viewModel.onFragmnetsClick()}"
             android:text="Fragment" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> viewModel.onCommonUtilsClick()}"
+            android:text="常用工具" />
 
     </LinearLayout>
 </layout>

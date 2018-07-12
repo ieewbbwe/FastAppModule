@@ -1,7 +1,7 @@
 ext.deps = [:]
 
 def versions = [:]
-versions.support = "27.0.2"
+versions.support = "27.1.1"
 versions.multidex = "1.0.2"
 versions.constraint_layout = "1.0.2"
 versions.junit = "4.12"
@@ -17,6 +17,7 @@ versions.retrofit2 = "2.2.0"
 versions.retrofit2_log = "3.6.0"
 versions.arouter_compiler = "1.1.4"
 versions.arouter_api = "1.3.1"
+versions.and_permission = "2.0.0-rc11"
 
 def build_versions = [:]
 build_versions.min_sdk = 16
@@ -43,6 +44,7 @@ deps.constraint_layout = "com.android.support.constraint:constraint-layout:$vers
 deps.glide = "com.github.bumptech.glide:glide:$versions.glide"
 deps.arouter_api = "com.alibaba:arouter-api:$versions.arouter_api"
 deps.arouter_compiler = "com.alibaba:arouter-compiler:$versions.arouter_compiler"
+deps.and_permission = "com.yanzhenjie:permission:$versions.and_permission"
 
 // RxJava
 deps.rxandroid = "io.reactivex.rxjava2:rxandroid:$versions.rxJavaVersion"

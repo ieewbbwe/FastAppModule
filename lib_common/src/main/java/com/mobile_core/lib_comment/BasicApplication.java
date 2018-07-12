@@ -26,6 +26,7 @@ public class BasicApplication extends Application{
         SharedPrefManager.init(getApplicationContext());
         ImageLoadFactory.init(getApplicationContext());
         NotificationManager.getInstance().init(getApplicationContext());
+        LocationManager.init(getApplicationContext());
         Thread.setDefaultUncaughtExceptionHandler(UncaughtException.getInstance(getApplicationContext()));
 
         MultiDex.install(this);

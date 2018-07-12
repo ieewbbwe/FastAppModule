@@ -75,6 +75,6 @@ public class BasicActivity extends AppCompatActivity
 
     @Override
     public AppCompatActivity getSupportActivity() {
-        return null;
+        return this;
     }
 }

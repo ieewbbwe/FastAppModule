@@ -1,4 +1,9 @@
 # 基础框架
+基础架构：MVVM
+响应式框架：RxJava2
+网络框架：Retrofit2
+数据库：Room
+权限：AndPermission
 
 ## 库文件申明
 ### OkHttp

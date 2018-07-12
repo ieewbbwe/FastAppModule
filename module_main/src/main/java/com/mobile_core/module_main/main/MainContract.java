@@ -15,6 +15,11 @@ public class MainContract {
     }
 
     public interface ViewModel extends BasicViewModel{
+        void onAnswerClick();
+        void onClickMine(View v);
+        void onPPSClick();
+        void onFragmnetsClick();
+        void onCommonUtilsClick();
 
     }
 }

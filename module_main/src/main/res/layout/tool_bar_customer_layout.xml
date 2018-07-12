@@ -19,6 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/size_8dp"
+            android:onClick="@{(v)->viewModel.onLeftBackClick(v)}"
             android:src="@drawable/ic_arrow_back_white_24dp" />
 
         <TextView

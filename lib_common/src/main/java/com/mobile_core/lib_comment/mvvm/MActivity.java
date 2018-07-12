@@ -10,12 +10,11 @@ import android.view.ViewGroup;
 
 import com.mobile_core.lib_comment.BR;
 import com.mobile_core.lib_comment.BasicActivity;
-import com.mobile_core.lib_comment.R;
 import com.mobile_core.lib_comment.databinding.ToolBarDefaultBinding;
 
 /**
  * Created by picher on 2018/7/11.
- * Describe：MVVM 架构 Activity 基类
+ * Describe：MVVM 架构 Activity 基类 需要使用MVVM架构的Model 继承该类
  */
 
 public abstract class MActivity<VM extends ParentViewModel, B extends ViewDataBinding>
@@ -50,9 +49,9 @@ public abstract class MActivity<VM extends ParentViewModel, B extends ViewDataBi
                 // 显示返回按钮
                 getSupportActionBar().setDisplayHomeAsUpEnabled(toolBarViewModel.isBackEnable());
                 // 显示返回按钮图标
-                if (toolBarViewModel.getLeftIconDrawble() != null) {
+                if (toolBarViewModel.getLeftIconDrawable() != null) {
                     getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-                    getSupportActionBar().setHomeAsUpIndicator(toolBarViewModel.getLeftIconDrawble());
+                    getSupportActionBar().setHomeAsUpIndicator(toolBarViewModel.getLeftIconDrawable());
                 }
                 // Menu菜单
                 if (toolBarViewModel.getMenuId() != 0) {

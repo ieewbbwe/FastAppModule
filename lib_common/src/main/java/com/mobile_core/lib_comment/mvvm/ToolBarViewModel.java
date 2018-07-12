@@ -1,14 +1,17 @@
 package com.mobile_core.lib_comment.mvvm;
 
 
+import android.app.Activity;
 import android.graphics.drawable.Drawable;
+import android.view.View;
 
 /**
  * Created by picher on 2018/7/6.
  * Describe：
  */
 
-public class ToolBarViewModel extends ParentViewModel {
+public class ToolBarViewModel extends ParentViewModel
+        implements ToolBarContract.ViewModel{
 
     /*标题*/
     private String title;
@@ -76,11 +79,18 @@ public class ToolBarViewModel extends ParentViewModel {
         isTitleCenter = titleCenter;
     }
 
-    public Drawable getLeftIconDrawble() {
+    public Drawable getLeftIconDrawable() {
         return leftIconDrawble;
     }
 
     public void setLeftIconDrawble(Drawable leftIconDrawble) {
         this.leftIconDrawble = leftIconDrawble;
+    }
+
+    @Override
+    public void onLeftBackClick(View v) {
+        if(view != null && view instanceof Activity){
+            ((Activity) view).onBackPressed();
+        }
     }
 }

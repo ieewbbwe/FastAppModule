@@ -5,6 +5,7 @@ import android.databinding.Bindable;
 
 import com.mobile_core.lib_comment.BasicView;
 import com.mobile_core.lib_comment.BasicViewModel;
+import com.mobile_core.lib_comment.LocationManager;
 import com.mobile_core.lib_comment.manager.AppStyleManager;
 
 /**
@@ -16,10 +17,12 @@ public abstract class ParentViewModel<V extends BasicView> extends BaseObservabl
         implements BasicViewModel{
 
     @Bindable
-    public AppStyleManager style;
+    protected AppStyleManager style;
+    protected LocationManager locationManager;
 
     public ParentViewModel(){
         this.style = AppStyleManager.getInstance();
+        this.locationManager = LocationManager.getInstance();
     }
 
     public AppStyleManager getStyle() {
