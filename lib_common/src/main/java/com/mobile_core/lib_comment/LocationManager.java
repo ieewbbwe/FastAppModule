@@ -4,6 +4,8 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.support.annotation.StringRes;
 
+import static com.mobile_core.lib_comment.utils.Lg.isDebug;
+
 /**
  * Created by picher on 2018/7/12.
  * Describe：获取系统资源
@@ -12,6 +14,7 @@ import android.support.annotation.StringRes;
 public class LocationManager {
     private static LocationManager mInstance;
     private Context applicationContext;
+    private boolean isDebug = true;
 
     private LocationManager() {
     }
@@ -42,5 +45,9 @@ public class LocationManager {
     //TODO Consider of I18N
     public String getStringByResource(@StringRes int resourceId){
         return applicationContext.getResources().getString(resourceId);
+    }
+
+    public boolean isDebug() {
+        return isDebug;
     }
 }

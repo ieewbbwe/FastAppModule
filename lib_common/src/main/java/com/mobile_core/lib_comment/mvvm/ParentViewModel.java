@@ -33,9 +33,9 @@ public abstract class ParentViewModel<V extends BasicView> extends BaseObservabl
         this.style = style;
     }
 
-    protected BasicView view;
+    protected V view;
 
-    public void onAttach(BasicView view){
+    public void onAttach(V view){
         this.view = view;
     }
 

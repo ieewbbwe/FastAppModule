@@ -28,6 +28,7 @@ public abstract class MFragment<VM extends ParentViewModel,B extends ViewDataBin
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater,getLayoutId(),null,false);
+        viewModel = onCreateViewModel();
         binding.setVariable(BR.viewModel, viewModel);
         viewModel.onAttach(this);
         return binding.getRoot();

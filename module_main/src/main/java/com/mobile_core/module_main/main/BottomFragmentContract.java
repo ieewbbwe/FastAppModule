@@ -12,6 +12,7 @@ public interface BottomFragmentContract {
 
     public interface View extends BasicView {
 
+        int getContainerView();
     }
 
     public interface ViewModel extends BasicViewModel {

@@ -2,7 +2,9 @@ package com.mobile_core.lib_comment.manager;
 
 import android.app.Application;
 
+import com.alibaba.android.arouter.BuildConfig;
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.mobile_core.lib_comment.LocationManager;
 
 /**
  * Created by picher on 2018/7/11.
@@ -10,11 +12,12 @@ import com.alibaba.android.arouter.launcher.ARouter;
  */
 public class RouterManager {
 
-    /* MODEL_PERSONAL */
-    public static final String MODEL_PERSONA_MINE = "/person/mine";
-    public static final String MODEL_MAIN_BOTTOM_FRAGMENT = "/main/bottom";
-    /* MODEL_MAIN */
-    /* MODEL_NEWS */
+    /* MODEL_PATH */
+    public static final String MODEL_PERSONA_MINE = "/person/mineActivity";
+    public static final String MODEL_PERSONA_MINE_FRAGMENT = "/person/mineFragment";
+    public static final String MODEL_MAIN_BOTTOM_FRAGMENT = "/main/bottomActivity";
+    public static final String MODEL_EXAM_ACTIVITY = "/exam/examActivity";
+    public static final String MODEL_PPS_ACTIVITY = "/pps/ppsActivity";
 
     private static RouterManager mInstance;
 
@@ -28,6 +31,10 @@ public class RouterManager {
     }
 
     public static void init(Application application){
+        if(LocationManager.getInstance().isDebug()){
+            ARouter.openLog();
+            ARouter.openDebug();
+        }
         ARouter.init(application);
         getInstance();
     }
@@ -38,5 +45,9 @@ public class RouterManager {
 
     public void startBottomFragmentActivity() {
         ARouter.getInstance().build(RouterManager.MODEL_MAIN_BOTTOM_FRAGMENT).navigation();
+    }
+
+    public void startActivity(String tagPath) {
+        ARouter.getInstance().build(tagPath).navigation();
     }
 }

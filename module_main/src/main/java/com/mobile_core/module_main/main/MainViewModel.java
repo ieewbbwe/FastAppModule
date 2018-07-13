@@ -2,17 +2,11 @@ package com.mobile_core.module_main.main;
 
 import android.Manifest;
 import android.app.Activity;
-import android.util.Log;
 import android.view.View;
 
-import com.jakewharton.rxbinding.view.RxView;
 import com.mobile_core.lib_comment.manager.PermissionManager;
 import com.mobile_core.lib_comment.manager.RouterManager;
 import com.mobile_core.lib_comment.mvvm.ParentViewModel;
-
-import java.util.concurrent.TimeUnit;
-
-import rx.functions.Action1;
 
 /**
  * Created by picher on 2018/7/5.
@@ -22,31 +16,24 @@ import rx.functions.Action1;
 public class MainViewModel extends ParentViewModel<MainContract.View>
         implements MainContract.ViewModel{
 
-    public void onClickMine(View v){
-        RouterManager.getInstance().startMineActivity();
-        /*RxView.clicks(v).throttleFirst(1, TimeUnit.SECONDS).subscribe(aVoid -> {
-        });*/
+    @Override
+    public void onMainClick() {
+        RouterManager.getInstance().startActivity(RouterManager.MODEL_MAIN_BOTTOM_FRAGMENT);
     }
 
     @Override
     public void onAnswerClick() {
-
-    }
-
-    @Override
-    public void onClickMine(MainContract.View v) {
-
+        RouterManager.getInstance().startActivity(RouterManager.MODEL_EXAM_ACTIVITY);
     }
 
     @Override
     public void onPPSClick() {
-
+        RouterManager.getInstance().startActivity(RouterManager.MODEL_PPS_ACTIVITY);
     }
 
     @Override
-    public void onFragmnetsClick() {
-        RouterManager.getInstance().startBottomFragmentActivity();
-
+    public void onMineClick(View v) {
+        RouterManager.getInstance().startActivity(RouterManager.MODEL_PERSONA_MINE);
     }
 
     @Override

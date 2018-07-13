@@ -22,11 +22,11 @@ public class BasicApplication extends Application{
     @Override
     public void onCreate() {
         super.onCreate();
+        LocationManager.init(getApplicationContext());
         RouterManager.init(this);
         SharedPrefManager.init(getApplicationContext());
         ImageLoadFactory.init(getApplicationContext());
         NotificationManager.getInstance().init(getApplicationContext());
-        LocationManager.init(getApplicationContext());
         Thread.setDefaultUncaughtExceptionHandler(UncaughtException.getInstance(getApplicationContext()));
 
         MultiDex.install(this);

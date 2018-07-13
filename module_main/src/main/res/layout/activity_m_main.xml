@@ -23,7 +23,8 @@
             layout="@layout/tool_bar_default"
             app:viewModel="@{toolBarViewModel}" />
 
-        <TextView
+        <Button
+            android:onClick="@{() -> viewModel.onMainClick()}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="主界面" />
@@ -37,20 +38,14 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="@{(v) -> viewModel.onClickMine(v)}"
-            android:text="个人组件" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:onClick="@{() -> viewModel.onPPSClick()}"
             android:text="论坛组件" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="@{() -> viewModel.onFragmnetsClick()}"
-            android:text="Fragment" />
+            android:onClick="@{(v) -> viewModel.onMineClick(v)}"
+            android:text="个人组件" />
 
         <Button
             android:layout_width="wrap_content"

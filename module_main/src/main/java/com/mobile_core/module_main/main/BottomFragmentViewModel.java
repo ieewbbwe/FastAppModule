@@ -1,12 +1,102 @@
 package com.mobile_core.module_main.main;
 
+import android.annotation.SuppressLint;
+import android.os.Build;
+import android.support.design.internal.BottomNavigationItemView;
+import android.support.design.internal.BottomNavigationMenuView;
+import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.text.TextUtils;
+import android.util.Log;
+
+import com.alibaba.android.arouter.launcher.ARouter;
+import com.mobile_core.lib_comment.manager.RouterManager;
 import com.mobile_core.lib_comment.mvvm.ParentViewModel;
+import com.mobile_core.module_main.R;
+
+import java.lang.reflect.Field;
 
 /**
  * Created by picher on 2018/7/12.
  * Describe：
  */
 
-public class BottomFragmentViewModel extends ParentViewModel
+public class BottomFragmentViewModel extends ParentViewModel<BottomFragmentContract.View>
         implements BottomFragmentContract.ViewModel{
+    private String mCurrentFragmentTag;
+    private FragmentManager fragmentManager;
+
+    public void setUpBottomNavigation(BottomNavigationView bottomNavigationView) {
+        // 取消三个以上item的放大缩小效果
+        disableShiftMode(bottomNavigationView);
+        if(Build.VERSION.SDK_INT < Build.VERSION_CODES.M){
+            // 5.0 以下取消涟漪效果
+            bottomNavigationView.setItemBackgroundResource(0);
+        }
+    }
+
+    @SuppressLint("RestrictedApi")
+    public void disableShiftMode(BottomNavigationView view) {
+        BottomNavigationMenuView menuView = (BottomNavigationMenuView) view.getChildAt(0);
+        try {
+            Field shiftingMode = menuView.getClass().getDeclaredField("mShiftingMode");
+            shiftingMode.setAccessible(true);
+            shiftingMode.setBoolean(menuView, false);
+            shiftingMode.setAccessible(false);
+            for (int i = 0; i < menuView.getChildCount(); i++) {
+                BottomNavigationItemView item = (BottomNavigationItemView) menuView.getChildAt(i);
+                //noinspection RestrictedApi
+                item.setShiftingMode(false);
+                // set once again checked value, so view will be updated
+                //noinspection RestrictedApi
+                item.setChecked(item.getItemData().isChecked());
+            }
+        } catch (NoSuchFieldException e) {
+            Log.e("BNVHelper", "Unable to get shift mode field", e);
+        } catch (IllegalAccessException e) {
+            Log.e("BNVHelper", "Unable to change value of shift mode", e);
+        }
+    }
+
+    public void onNavigationItemSelect(BottomNavigationView bottomNavigationView) {
+        fragmentManager = view.getSupportActivity().getSupportFragmentManager();
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+            Fragment fragment = null;
+            String tag;
+            if(fragmentManager != null){
+                FragmentTransaction transaction = fragmentManager.beginTransaction();
+                Fragment current = fragmentManager.findFragmentByTag(mCurrentFragmentTag);
+                if(!TextUtils.isEmpty(mCurrentFragmentTag) && current != null){
+                    transaction.hide(current);
+                }
+                int i = item.getItemId();
+                if (i == R.id.navigation_home) {
+                    return true;
+                }else if(i == R.id.navigation_answer){
+                    return true;
+                }else if(i == R.id.navigation_pps){
+                    return true;
+                }else if(i == R.id.navigation_personal){
+                    tag = RouterManager.MODEL_PERSONA_MINE_FRAGMENT;
+                    fragment = fragmentManager.findFragmentByTag(tag);
+                    if(fragment == null){
+                        fragment = (Fragment) ARouter.getInstance()
+                                .build(RouterManager.MODEL_PERSONA_MINE_FRAGMENT).navigation();
+                    }
+                    if(fragment != null && fragment.isAdded()){
+                        transaction.show(fragment);
+                    }else{
+                        transaction.replace(view.getContainerView(), fragment,tag);
+                    }
+                    mCurrentFragmentTag = tag;
+                    transaction.commit();
+                    return true;
+                }
+            }
+            return false;
+        });
+    }
 }
