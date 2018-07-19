@@ -3,10 +3,12 @@
     package="com.mobile_core.module_personal">
 
     <application android:theme="@style/AppTheme">
-
-        <activity android:name=".main.MineActivity"
-            android:screenOrientation="portrait"/>
-
+        <activity
+            android:name=".main.MineActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".main.LoginActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

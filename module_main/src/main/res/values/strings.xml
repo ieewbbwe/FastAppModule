@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">主界面-组件</string>
+    <string name="open_drawer_content_desc">打开菜单</string>
+    <string name="close_drawer_content_desc">关闭菜单</string>
 </resources>

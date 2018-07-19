@@ -1,4 +1,4 @@
-package com.wisesoft.module.exam;
+package com.wisesoft.module.exam.main;
 
 import com.mobile_core.lib_comment.BasicView;
 import com.mobile_core.lib_comment.BasicViewModel;

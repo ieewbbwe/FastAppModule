@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.wisesoft.module.exam.ExamActivity;
+import com.wisesoft.module.exam.main.ExamActivity;
 
 /**
  * Created by picher on 2018/7/5.

@@ -4,12 +4,14 @@ import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.mobile_core.lib_comment.BR;
 import com.mobile_core.lib_comment.BasicActivity;
+import com.mobile_core.lib_comment.R;
 import com.mobile_core.lib_comment.databinding.ToolBarDefaultBinding;
 
 /**
@@ -57,6 +59,7 @@ public abstract class MActivity<VM extends ParentViewModel, B extends ViewDataBi
                 if (toolBarViewModel.getMenuId() != 0) {
                     getMenuInflater().inflate(toolBarViewModel.getMenuId(), barBinding.toolBar.getMenu());
                 }
+
                 // 添加自定义布局 暂时使用addView得方式加进去
                 if(toolBarViewModel.getCustomerViewId() != 0){
                     View customerView;

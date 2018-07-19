@@ -5,11 +5,13 @@ import android.os.Build;
 import android.support.design.internal.BottomNavigationItemView;
 import android.support.design.internal.BottomNavigationMenuView;
 import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.View;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.mobile_core.lib_comment.manager.RouterManager;
@@ -74,6 +76,13 @@ public class BottomFragmentViewModel extends ParentViewModel<BottomFragmentContr
                 }
                 int i = item.getItemId();
                 if (i == R.id.navigation_home) {
+                    tag = RouterManager.MODEL_MAIN_FRAGMENT;
+                    fragment = fragmentManager.findFragmentByTag(tag);
+                    if(fragment == null){
+                        fragment = (Fragment) ARouter.getInstance()
+                                .build(RouterManager.MODEL_MAIN_FRAGMENT).navigation();
+                    }
+                    switchFragment(transaction, fragment, tag);
                     return true;
                 }else if(i == R.id.navigation_answer){
                     return true;
@@ -86,17 +95,42 @@ public class BottomFragmentViewModel extends ParentViewModel<BottomFragmentContr
                         fragment = (Fragment) ARouter.getInstance()
                                 .build(RouterManager.MODEL_PERSONA_MINE_FRAGMENT).navigation();
                     }
-                    if(fragment != null && fragment.isAdded()){
-                        transaction.show(fragment);
-                    }else{
-                        transaction.replace(view.getContainerView(), fragment,tag);
-                    }
-                    mCurrentFragmentTag = tag;
-                    transaction.commit();
+                    switchFragment(transaction, fragment, tag);
                     return true;
                 }
             }
             return false;
+        });
+    }
+
+    private void switchFragment(FragmentTransaction transaction, Fragment fragment, String tag) {
+        if(fragment != null && fragment.isAdded()){
+            transaction.show(fragment);
+        }else{
+            transaction.replace(view.getContainerView(), fragment,tag);
+        }
+        mCurrentFragmentTag = tag;
+        transaction.commit();
+    }
+
+    public void onSideMenuItemSelect(NavigationView sideMenuView) {
+        sideMenuView.getHeaderView(0).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                RouterManager.getInstance().startActivity(RouterManager.MODEL_PERSONA_LOGIN);
+            }
+        });
+
+        sideMenuView.setNavigationItemSelectedListener(item -> {
+            int id = item.getItemId();
+            if(id == R.id.nav_share){
+                view.toast("分享！");
+            }else if(id == R.id.nav_theme){
+                view.toast("切换模式！");
+            }else if(id  == R.id.nav_manage){
+                view.toast("设置！");
+            }
+            return true;
         });
     }
 }

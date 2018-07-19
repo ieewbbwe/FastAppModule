@@ -11,7 +11,7 @@ import android.view.View;
  */
 
 public class ToolBarViewModel extends ParentViewModel
-        implements ToolBarContract.ViewModel{
+        implements ToolBarContract.ViewModel {
 
     /*标题*/
     private String title;
@@ -23,6 +23,8 @@ public class ToolBarViewModel extends ParentViewModel
     private Drawable leftIconDrawble;
     /*右边的标题菜单*/
     private int menuId;
+    /*SideMenu 联动设置*/
+    private boolean isDrawerEnable;
 
     /*自定义布局*/
     private int customerViewId;
@@ -87,9 +89,76 @@ public class ToolBarViewModel extends ParentViewModel
         this.leftIconDrawble = leftIconDrawble;
     }
 
+    public boolean isDrawerEnable() {
+        return isDrawerEnable;
+    }
+
+    public void setDrawerEnable(boolean drawerEnable) {
+        isDrawerEnable = drawerEnable;
+    }
+
+    public ToolBarViewModel(String title, boolean isTitleCenter, boolean isBackEnable, Drawable leftIconDrawble, int menuId, boolean isDrawerEnable, int customerViewId) {
+        this.title = title;
+        this.isTitleCenter = isTitleCenter;
+        this.isBackEnable = isBackEnable;
+        this.leftIconDrawble = leftIconDrawble;
+        this.menuId = menuId;
+        this.isDrawerEnable = isDrawerEnable;
+        this.customerViewId = customerViewId;
+    }
+
+    public static class Builder {
+        private String title;
+        private boolean isTitleCenter;
+        private boolean isBackEnable;
+        private Drawable leftIconDrawble;
+        private int menuId;
+        private boolean isDrawerEnable;
+        private int customerViewId;
+
+        public Builder setTitle(String title) {
+            this.title = title;
+            return this;
+        }
+
+        public Builder setTitleCenter(boolean titleCenter) {
+            isTitleCenter = titleCenter;
+            return this;
+        }
+
+        public Builder setBackEnable(boolean backEnable) {
+            isBackEnable = backEnable;
+            return this;
+        }
+
+        public Builder setLeftIconDrawble(Drawable leftIconDrawble) {
+            this.leftIconDrawble = leftIconDrawble;
+            return this;
+        }
+
+        public Builder setMenuId(int menuId) {
+            this.menuId = menuId;
+            return this;
+        }
+
+        public Builder setDrawerEnable(boolean drawerEnable) {
+            isDrawerEnable = drawerEnable;
+            return this;
+        }
+
+        public Builder setCustomerViewId(int customerViewId) {
+            this.customerViewId = customerViewId;
+            return this;
+        }
+
+        public ToolBarViewModel build() {
+            return new ToolBarViewModel(title, isTitleCenter, isBackEnable, leftIconDrawble, menuId, isDrawerEnable, customerViewId);
+        }
+    }
+
     @Override
     public void onLeftBackClick(View v) {
-        if(view != null && view instanceof Activity){
+        if (view != null && view instanceof Activity) {
             ((Activity) view).onBackPressed();
         }
     }

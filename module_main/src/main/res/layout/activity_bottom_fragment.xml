@@ -1,31 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <data>
+
         <variable
             name="viewModel"
-            type="com.mobile_core.module_main.main.BottomFragmentViewModel"/>
+            type="com.mobile_core.module_main.main.BottomFragmentViewModel" />
+
+        <variable
+            name="toolBarViewModel"
+            type="com.mobile_core.lib_comment.mvvm.ToolBarViewModel" />
+
+        <variable
+            name="sideMenuViewModel"
+            type="com.mobile_core.module_main.main.main.SideMenuViewModel"/>
     </data>
 
-    <RelativeLayout
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawerLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <FrameLayout
-            android:layout_above="@+id/bottomNavigationView"
-            android:id="@+id/containerFl"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent">
 
-        <android.support.design.widget.BottomNavigationView
-            android:id="@+id/bottomNavigationView"
-            android:layout_width="match_parent"
-            android:background="?android:attr/windowBackground"
-            android:layout_gravity="bottom"
-            android:layout_alignParentBottom="true"
-            app:menu="@menu/navigation"
-            android:layout_height="wrap_content"/>
+            <include
+                android:id="@+id/toolBarLayout"
+                layout="@layout/tool_bar_default"
+                app:viewModel="@{toolBarViewModel}" />
 
-    </RelativeLayout>
+            <FrameLayout
+                android:id="@+id/containerFl"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/bottomNavigationView"
+                android:layout_below="@+id/toolBarLayout" />
+
+            <android.support.design.widget.BottomNavigationView
+                android:id="@+id/bottomNavigationView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom"
+                android:background="?android:attr/windowBackground"
+                app:menu="@menu/navigation" />
+
+        </RelativeLayout>
+
+        <!--Slid Navigation-->
+        <android.support.design.widget.NavigationView
+            android:id="@+id/sideMenuView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            app:headerLayout="@layout/layout_nav_header_main"
+            app:menu="@menu/activity_main_drawer" />
+    </android.support.v4.widget.DrawerLayout>
+
 </layout>

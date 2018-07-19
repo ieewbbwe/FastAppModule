@@ -18,6 +18,8 @@ public class RouterManager {
     public static final String MODEL_MAIN_BOTTOM_FRAGMENT = "/main/bottomActivity";
     public static final String MODEL_EXAM_ACTIVITY = "/exam/examActivity";
     public static final String MODEL_PPS_ACTIVITY = "/pps/ppsActivity";
+    public static final String MODEL_MAIN_FRAGMENT = "/main/mainFragment";
+    public static final String MODEL_PERSONA_LOGIN = "/person/login";
 
     private static RouterManager mInstance;
 

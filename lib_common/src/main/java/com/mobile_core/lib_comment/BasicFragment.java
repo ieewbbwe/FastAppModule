@@ -3,6 +3,7 @@ package com.mobile_core.lib_comment;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
 
 import com.mobile_core.lib_comment.fragment.LoadingDialogFragment;
 import com.mobile_core.lib_comment.mvvm.MActivity;
@@ -15,6 +16,7 @@ import com.mobile_core.lib_comment.mvvm.MActivity;
 public class BasicFragment extends Fragment implements BasicView{
 
     private static final String LOADING_DIALOG_TAG = "loading_dialog_tag";
+    private Toast toast;
 
     @Override
     public void showLoading(boolean show) {
@@ -47,5 +49,16 @@ public class BasicFragment extends Fragment implements BasicView{
     @Override
     public AppCompatActivity getSupportActivity() {
         return (AppCompatActivity) getActivity();
+    }
+
+    @Override
+    public void toast(String str) {
+        if (toast == null) {
+            toast = Toast.makeText(getActivity(), str, Toast.LENGTH_SHORT);
+        } else {
+            toast.setText(str);
+            toast.setDuration(Toast.LENGTH_SHORT);
+        }
+        toast.show();
     }
 }

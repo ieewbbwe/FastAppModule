@@ -15,4 +15,6 @@ public interface BasicView {
     boolean isCanShowDialog();
 
     AppCompatActivity getSupportActivity();
+
+    void toast(String str);
 }
