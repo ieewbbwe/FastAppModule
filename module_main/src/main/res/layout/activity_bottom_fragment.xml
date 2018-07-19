@@ -10,7 +10,7 @@
 
         <variable
             name="toolBarViewModel"
-            type="com.mobile_core.lib_comment.mvvm.ToolBarViewModel" />
+            type="com.mobile_core.base.mvvm.ToolBarViewModel" />
 
         <variable
             name="sideMenuViewModel"

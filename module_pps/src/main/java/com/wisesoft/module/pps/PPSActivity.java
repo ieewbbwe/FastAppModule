@@ -1,8 +1,8 @@
 package com.wisesoft.module.pps;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.mobile_core.lib_comment.manager.RouterManager;
-import com.mobile_core.lib_comment.mvvm.MActivity;
+import com.mobile_core.base.manager.router.RouterManager;
+import com.mobile_core.base.mvvm.MActivity;
 import com.wisesoft.module.pps.databinding.ActivityPpsBinding;
 
 /**

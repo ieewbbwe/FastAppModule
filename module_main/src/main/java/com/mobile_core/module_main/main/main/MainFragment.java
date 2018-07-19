@@ -4,9 +4,8 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.mobile_core.lib_comment.manager.RouterManager;
-import com.mobile_core.lib_comment.mvvm.MFragment;
-import com.mobile_core.lib_comment.mvvm.ParentViewModel;
+import com.mobile_core.base.manager.router.RouterManager;
+import com.mobile_core.base.mvvm.MFragment;
 import com.mobile_core.module_main.R;
 import com.mobile_core.module_main.databinding.FragmentMainBinding;
 import com.mobile_core.module_main.main.MainViewModel;

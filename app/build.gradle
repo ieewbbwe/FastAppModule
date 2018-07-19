@@ -3,11 +3,12 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion build_versions.target_sdk
     defaultConfig {
-        applicationId "cn.picher.fastapp_module"
+        applicationId "com.wisesoft.exam"
         minSdkVersion build_versions.min_sdk
         targetSdkVersion build_versions.target_sdk
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         javaCompileOptions {
@@ -31,12 +32,28 @@ android {
     dataBinding {
         enabled true
     }
+
+   /* signingConfigs {
+        debug {
+            storeFile file("sign.jks")
+            storePassword "com.hk"
+            keyAlias "hkdealsApp"
+            keyPassword "com.hk.deals"
+        }
+        release {
+            storeFile file("sign.jks")
+            storePassword "com.hk"
+            keyAlias "hkdealsApp"
+            keyPassword "com.hk.deals"
+        }
+    }*/
+
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation deps.support.multidex
-    implementation project(':lib_common')
+    implementation project(':lib_base')
     if(!isModule.toBoolean()){
         implementation project(':module_main')
         implementation project(':module_personal')

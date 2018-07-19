@@ -1,9 +1,7 @@
 package com.wisesoft.module.pps;
 
-import android.view.View;
-
-import com.mobile_core.lib_comment.BasicView;
-import com.mobile_core.lib_comment.BasicViewModel;
+import com.mobile_core.base.BasicView;
+import com.mobile_core.base.BasicViewModel;
 
 /**
  * Created by picher on 2018/7/13.

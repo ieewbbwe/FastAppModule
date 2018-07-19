@@ -1,0 +1,17 @@
+<manifest package="com.mobile_core.base"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application android:theme="@style/AppTheme">
+       <!-- &lt;!&ndash; 7.0 不允许传递file://URI &ndash;&gt;
+        &lt;!&ndash; ex: content://com.yahoo.hkdeals.fileProvider/external_file_path/Download/ &ndash;&gt;
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.com.mobile_core.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"/>
+        </provider>-->
+    </application>
+</manifest>

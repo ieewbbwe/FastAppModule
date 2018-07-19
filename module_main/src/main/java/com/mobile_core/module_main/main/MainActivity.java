@@ -1,11 +1,10 @@
 package com.mobile_core.module_main.main;
 
-import android.Manifest;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-import com.mobile_core.lib_comment.mvvm.MActivity;
-import com.mobile_core.lib_comment.mvvm.ToolBarViewModel;
+import com.mobile_core.base.mvvm.MActivity;
+import com.mobile_core.base.mvvm.ToolBarViewModel;
 import com.mobile_core.module_main.R;
 import com.mobile_core.module_main.databinding.ActivityMMainBinding;
 /**

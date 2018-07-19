@@ -1,16 +1,13 @@
 package com.mobile_core.module_main.main;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.design.widget.NavigationView;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.view.MenuItem;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.mobile_core.lib_comment.manager.RouterManager;
-import com.mobile_core.lib_comment.mvvm.MActivity;
-import com.mobile_core.lib_comment.mvvm.ToolBarViewModel;
+import com.mobile_core.base.manager.router.RouterManager;
+import com.mobile_core.base.mvvm.MActivity;
+import com.mobile_core.base.mvvm.ToolBarViewModel;
 import com.mobile_core.module_main.R;
 import com.mobile_core.module_main.databinding.ActivityBottomFragmentBinding;
 

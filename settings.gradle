@@ -1,1 +1,1 @@
-include ':app', ':lib_common', ':module_personal', ':module_main', ':module_exam', ':module_pps'
+include ':app', ':lib_base', ':module_personal', ':module_main', ':module_exam', ':module_pps'

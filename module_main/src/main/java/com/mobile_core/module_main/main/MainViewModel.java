@@ -4,9 +4,9 @@ import android.Manifest;
 import android.app.Activity;
 import android.view.View;
 
-import com.mobile_core.lib_comment.manager.PermissionManager;
-import com.mobile_core.lib_comment.manager.RouterManager;
-import com.mobile_core.lib_comment.mvvm.ParentViewModel;
+import com.mobile_core.base.manager.PermissionManager;
+import com.mobile_core.base.manager.router.RouterManager;
+import com.mobile_core.base.mvvm.ParentViewModel;
 
 /**
  * Created by picher on 2018/7/5.

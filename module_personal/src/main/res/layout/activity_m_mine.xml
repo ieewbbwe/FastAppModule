@@ -7,7 +7,7 @@
 
         <variable
             name="toolBarViewModel"
-            type="com.mobile_core.lib_comment.mvvm.ToolBarViewModel"/>
+            type="com.mobile_core.base.mvvm.ToolBarViewModel"/>
     </data>
 
     <android.support.constraint.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"

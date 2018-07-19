@@ -14,8 +14,8 @@ import android.util.Log;
 import android.view.View;
 
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.mobile_core.lib_comment.manager.RouterManager;
-import com.mobile_core.lib_comment.mvvm.ParentViewModel;
+import com.mobile_core.base.manager.router.RouterManager;
+import com.mobile_core.base.mvvm.ParentViewModel;
 import com.mobile_core.module_main.R;
 
 import java.lang.reflect.Field;

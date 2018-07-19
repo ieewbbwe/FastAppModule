@@ -18,6 +18,8 @@ versions.retrofit2_log = "3.6.0"
 versions.arouter_compiler = "1.1.4"
 versions.arouter_api = "1.3.1"
 versions.and_permission = "2.0.0-rc11"
+versions.room_version = "1.1.1"
+versions.greendao = "3.2.2"
 
 def build_versions = [:]
 build_versions.min_sdk = 16
@@ -45,14 +47,19 @@ deps.glide = "com.github.bumptech.glide:glide:$versions.glide"
 deps.arouter_api = "com.alibaba:arouter-api:$versions.arouter_api"
 deps.arouter_compiler = "com.alibaba:arouter-compiler:$versions.arouter_compiler"
 deps.and_permission = "com.yanzhenjie:permission:$versions.and_permission"
-
+// GreenDao
+deps.greendao = "org.greenrobot:greendao:$versions.greendao"
+deps.greendao_generator = "org.greenrobot:greendao-generator:$versions.greendao"
+// Room
+deps.room = "android.arch.persistence.room:runtime:$versions.room_version"
+deps.room_rxjava2 = "android.arch.persistence.room:rxjava2:$versions.room_version"
+deps.room_compiler = "android.arch.persistence.room:compiler:$versions.room_version"
 // RxJava
 deps.rxandroid = "io.reactivex.rxjava2:rxandroid:$versions.rxJavaVersion"
 deps.rxjava2 = "io.reactivex.rxjava2:rxjava:$versions.rxJavaVersion"
 deps.rxlifecycle = "com.trello:rxlifecycle:$versions.rxLifeVersion"
 deps.rxlife_components = "com.trello:rxlifecycle-components:$versions.rxLifeVersion"
 deps.rxBinding = "com.jakewharton.rxbinding:rxbinding:$versions.rxBindingVersion"
-
 // Retrofit
 deps.rxjava2_adapter = "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$versions.rxjava2_adapter"
 deps.retrofit2 = "com.squareup.retrofit2:retrofit:$versions.retrofit2"
