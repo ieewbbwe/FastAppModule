@@ -33,20 +33,20 @@ android {
         enabled true
     }
 
-   /* signingConfigs {
+    signingConfigs {
         debug {
             storeFile file("sign.jks")
-            storePassword "com.hk"
-            keyAlias "hkdealsApp"
-            keyPassword "com.hk.deals"
+            storePassword "151102"
+            keyAlias "exam"
+            keyPassword "com.exam"
         }
         release {
             storeFile file("sign.jks")
-            storePassword "com.hk"
-            keyAlias "hkdealsApp"
-            keyPassword "com.hk.deals"
+            storePassword "151102"
+            keyAlias "exam"
+            keyPassword "com.exam"
         }
-    }*/
+    }
 
 }
 

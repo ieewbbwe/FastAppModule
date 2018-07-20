@@ -38,29 +38,31 @@ dependencies {
     api deps.support.recyclerview
     api deps.support.cardview
     api deps.constraint_layout
-    /*Rx框架*/
+    // 列表框架
+    api deps.l_recycleview
+    // Rx框架
     api deps.rxandroid
     api deps.rxjava2
     api deps.rxlifecycle
     api deps.rxlife_components
     api deps.rxBinding
-    /*网络框架*/
+    // 网络框架
     api deps.rxjava2_adapter
     api deps.retrofit2
     api deps.retrofit2_conver_gson
     api deps.retrofit2_log
-    /*路由框架*/
+    // 路由框架
     api deps.arouter_api
-    /*数据库框架*/
+    // 数据库框架
+    api deps.greendao
+    api deps.greendao_generator
     /*api deps.room
     api deps.room_rxjava2
     annotationProcessor deps.room_compiler*/
-    api deps.greendao
-    api deps.greendao_generator
-    /*权限框架*//*
-    api deps.and_permission*/
+    // 权限框架
+    //api deps.and_permission
 
-    /*测试框架*/
+    // 测试框架
     testImplementation deps.jnuit
     androidTestImplementation deps.test_runner
     androidTestImplementation deps.espresso_core

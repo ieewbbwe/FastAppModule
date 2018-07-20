@@ -20,6 +20,7 @@ public class RouterManager {
     public static final String MODEL_PERSONA_MINE_FRAGMENT = "/person/mineFragment";
 
     public static final String MODEL_EXAM_ACTIVITY = "/exam/examActivity";
+    public static final String MODEL_EXAM_PAPER_ACTIVITY = "/exam/examPaperActivity";
 
     public static final String MODEL_PPS_ACTIVITY = "/pps/ppsActivity";
 
