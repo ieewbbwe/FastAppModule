@@ -41,6 +41,11 @@ public class MainViewModel extends ParentViewModel<MainContract.View>
 
     }
 
+    @Override
+    public void onMainListClick() {
+        RouterManager.getInstance().startActivity(RouterManager.MODEL_MAIN_LIST_ACTIVITY);
+    }
+
     public void requestPermission() {
         PermissionManager.with((Activity) view).
                 addPermission(Manifest.permission.ACCESS_FINE_LOCATION).

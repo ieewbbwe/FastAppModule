@@ -27,7 +27,13 @@
             android:onClick="@{() -> viewModel.onMainClick()}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="主界面" />
+            android:text="主界面-bottomSheet" />
+
+        <Button
+            android:onClick="@{() -> viewModel.onMainListClick()}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="主界面-列表" />
 
         <Button
             android:layout_width="wrap_content"

@@ -14,6 +14,7 @@ public class RouterManager {
     /* MODEL_PATH */
     public static final String MODEL_MAIN_BOTTOM_FRAGMENT = "/main/bottomActivity";
     public static final String MODEL_MAIN_FRAGMENT = "/main/mainFragment";
+    public static final String MODEL_MAIN_LIST_ACTIVITY = "/main/mainListActivity";
 
     public static final String MODEL_PERSONA_MINE = "/person/mineActivity";
     public static final String MODEL_PERSONA_LOGIN = "/person/login";

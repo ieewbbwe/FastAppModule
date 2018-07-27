@@ -20,5 +20,6 @@ public class MainContract {
         void onPPSClick();
         void onMineClick(android.view.View v);
         void onCommonUtilsClick();
+        void onMainListClick();
     }
 }
